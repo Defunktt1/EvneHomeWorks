@@ -4,12 +4,8 @@
     <title>MVC</title>
 </head>
 <body>
-<header>
-    <p>header</p>
-</header>
-<?php include 'application/views/' . $contextView; ?>
-<footer>
-    <p>footer</p>
-</footer>
+<h1><a href="/hw1/">HW1</h1>
+<h1><a href="/hw3/">HW3</h1>
+<h1><a href="/analyzer/">HW5</h1>
 </body>
 </html>

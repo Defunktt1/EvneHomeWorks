@@ -7,18 +7,15 @@ class Route
     public static function get($route, $controller)
     {
         $server = $_SERVER;
-        $uri = explode('/', $server['REQUEST_URI']);
+        $uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+        if (substr($uri, -1) !== '/') {
+            $uri .= '/';
+        }
+
         $controllerName = 'HomeController';
         $actionName = 'index';
 
-        $url = '';
-        foreach ($uri as $uriPart) {
-            if (!empty($uriPart)) {
-                $url .= $uriPart . '/';
-            }
-        }
-
-        if ($server['REQUEST_METHOD'] === 'GET' && $url === strtolower($route)) {
+        if (($server['REQUEST_METHOD'] === 'GET' || $server['REQUEST_METHOD'] === 'POST') && $uri === strtolower($route)) {
             $controllerData = explode('@', $controller);
             $controllerName = $controllerData[0];
             $controllerFile = $controllerName . '.php';
