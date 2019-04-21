@@ -16,6 +16,8 @@ Route::get('/hw3/scanoropen/', 'HomeWork3@scanNewDirOrOpenFile');
 Route::get('/hw3/back/', 'HomeWork3@clickBack');
 Route::get('/hw3/save/', 'HomeWork3@saveChanges');
 
+Route::get('/hw4/', 'HomeWork4@index');
+
 Route::get('/analyzer/', 'HomeWork5@index');
 Route::get('/analyz-text/', 'HomeWork5@textAnalyz');
 

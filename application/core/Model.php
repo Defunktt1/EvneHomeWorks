@@ -26,6 +26,11 @@ class Model
         ]);
     }
 
+    public function save($description, $title, $link, $date, $image, $meta, $created)
+    {
+
+    }
+    
     public function all()
     {
         $stmt = $this->pdo->prepare("SELECT * FROM {$this->tableName}");
